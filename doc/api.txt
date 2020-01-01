@@ -1,0 +1,367 @@
+
+BASE待定。
+统一POST。
+
+part0外，所有请求均带有身份字段：
+	uuid	项目内uid，包含平台信息
+	token	token
+
+
+part0 身份验证相关
+	
+	登录：
+		地址：	{BASE}/user/login
+		参数：  
+			type	登录种类： "normal"用户名密码 , "qq"QQ , "wechat"微信
+			uid		普通登录时为用户名 渠道登录时为对应id(如qqopenid)
+			pwd		普通登录时为密码加盐哈希 渠道登录时为token
+		返回：
+			code	状态码 0为成功 -1为失败
+			uuid	项目内uid，包含平台信息
+			token	token，用于后续操作的身份验证。
+
+
+	登出：
+		地址：	{BASE}/user/logout
+		参数：  
+			uuid	项目内uid，包含平台信息
+			token	token
+		返回：
+			code	状态码 0为成功 -1为失败
+
+	注册：
+		地址：	{BASE}/user/reg
+		参数：  
+			uid		用户名
+			pwd		密码加盐哈希
+		返回：
+			code	状态码 0为成功 -1为失败
+
+	手机号注册，找回密码这些8想做了。。实现起来可能相当恶心
+	前台做留个口子就好
+
+part1 单词
+	
+	获取词书列表
+		地址：	{BASE}/word/booklist
+		参数：	none
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			list: [
+				{
+					bookid	书id
+					name	书名
+					visit	是否曾用
+					size	单词数
+				},..
+			]
+		}
+
+	获取学习信息
+		地址：	{BASE}/word/getplan
+		参数：	none
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			bookid	书id
+			name	书名
+			size	单词数
+			plantime	计划时间	(int，日数)
+			noticetime	提醒时间 (时间戳，秒级别)
+			alreadysize	已读单词数
+		}
+
+	设置学习信息
+		地址：	{BASE}/word/setplan
+		参数：	{
+			bookid	书id
+			plantime	计划时间	(int，日数)
+			noticetime	提醒时间 (时间戳，秒级别)
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为信息不符合规范
+		}
+
+	取单词信息
+		地址：	{BASE}/word/getword
+		参数：	{
+			opt		"next"跟随计划下一单词 "cur"指定单词
+			id		单词id(可选项)
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为信息不符合规范
+			id		词id
+			text	词英文
+			chinese	词义
+			type	词性
+			sym		音标
+			voice	读音MP3连接
+			exp		例句
+			help	助记信息
+		}
+
+	提交单词状态
+		地址：	{BASE}/word/setwordstate
+		参数：	{
+			id		单词id
+			stt 	0认识 1模糊 2忘记
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为信息不符合规范
+		}
+
+	取单词列表
+		地址：	{BASE}/word/getwordlist
+		参数：	none
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为信息不符合规范
+			list:[
+				{
+					id		词id
+					text	英文
+					stt 	状态 0认识 1模糊 2忘记
+				},...
+			]
+		}
+
+part2 配音
+	
+	获取视频列表
+		地址：	{BASE}/voice/vediolist
+		参数：	none
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			list: [
+				{
+					vedioid	影片id
+					name	影片名
+					pic		缩略图url
+					cnt		使用人数
+					time	时长（秒）
+				},..
+			]
+		}
+
+	获取视频信息
+		地址：	{BASE}/voice/getvedioinfo
+		参数：	{
+			id	视频id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			vedioid	影片id
+			name	影片名
+			pic		缩略图url
+			cnt		使用人数
+			time	时长（秒）
+			url		视频文件地址
+			content	描述
+			rank	[
+				{
+					uuid	用户id
+					oktime	赞数
+				},
+			]
+		}
+
+	点赞
+		地址：	{BASE}/voice/vedioworkplus
+		参数：	{
+			id	视频id
+			touuid	被赞用户id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+	取配音信息
+		地址：	{BASE}/voice/getvediovoiceinfo
+		参数：	{
+			id	视频id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list： [
+				{
+					start	起始时间(秒)
+					end		终止时间(秒)
+					word	台词
+					chinese	翻译
+				},...
+			]
+		}
+
+	提交配音信息
+		地址：	{BASE}/voice/uploadvediovoice
+		参数：	{
+			id	视频id
+			file	合成后的视频
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+part3 文章
+	
+	获取文章列表
+		地址：	{BASE}/atc/atclist
+		参数：	none
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			list: [
+				{
+					id	文章id
+					name	文章名
+					content	内容简略
+					oknum		赞数
+					readnum	阅读量
+					time	预计阅读时间
+				},..
+			]
+		}
+
+	获取文章信息
+		地址：	{BASE}/atc/atcinfo
+		参数：	{
+			id	文章id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败
+			id	文章id
+			name	文章名
+			content	内容简略
+			oknum		赞数
+			readnum	阅读量
+			time	预计阅读时间
+		}
+
+	点赞
+		地址：	{BASE}/atc/actplus
+		参数：	{
+			id	文章id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+	取评论信息
+		地址：	{BASE}/atc/getcom
+		参数：	{
+			id	视频id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list： [
+				{
+					cmid	评论楼
+					uuid	uuid
+					content	内容
+					time	时间
+					plus 	赞数
+				},...
+			]
+		}
+
+	发表评论
+		地址：	{BASE}/atc/sentcom
+		参数：	{
+			id	视频id
+			content	内容
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+	点赞评论
+		地址：	{BASE}/atc/pluscom
+		参数：	{
+			id	文章id
+			cmid	评论id
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+		收藏砍了或者放本地吧(我好累啊)
+
+part4 商城
+
+	商品列表
+		地址：	{BASE}/shop/list
+		参数：	
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list [
+				{
+					name		名称
+					url			淘宝链接
+					pic 		图片
+					price		价格
+					content 	内容
+				},...
+			]
+		}
+
+part5 数据
+
+	学习时长
+		地址：	{BASE}/data/len
+		参数：	
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list [int,int,int,.....,int]
+		}
+
+	学习情况
+		地址：	{BASE}/data/case
+		参数：	
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list [
+				{
+					word	单词时间
+					read 	阅读时间
+					voice 	配音时间
+				},...
+			]
+		}
+
+	签到情况
+		地址：	{BASE}/data/card
+		参数：	
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+			list [bool,bool,....,bool]
+		}
+
+	签到
+		地址：	{BASE}/data/dorecord
+		参数：	
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
+
+part6 我的
+	
+	读取信息
+		地址：	{BASE}/mine/get
+		参数：	
+		返回：	{
+			uname		用户名
+			type		登录平台
+			uid 		等号账号
+			uuid 		本平台id
+			timereg 	注册时间
+			phone 		手机
+			head		头像 这个就几个头像中选一个给id吧，别上传了。。
+		}
+
+	修改信息
+		地址：	{BASE}/mine/change
+		参数：	{
+			uname		用户名
+			phone 		手机
+			head		头像 这个就几个头像中选一个给id吧，别上传了。。
+		}
+		返回：	{
+			code: 	状态码 0为成功 -1为身份验证失败 1为其他
+		}
