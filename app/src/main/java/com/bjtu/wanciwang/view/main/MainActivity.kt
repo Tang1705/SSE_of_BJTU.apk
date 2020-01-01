@@ -1,7 +1,8 @@
-package com.bjtu.wanciwang
+package com.bjtu.wanciwang.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bjtu.wanciwang.R
 
 class MainActivity : AppCompatActivity() {
 
