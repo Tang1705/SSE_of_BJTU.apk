@@ -63,7 +63,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 ### 3.5 个人信息页面
 
 
-<div align="center"><img src="https://tang5618.com/zip/usercenter.jpg" alt="04" width="25%" height="25%" /></div>
+<div align="center"><img src="http://tang5618.com/zip/usercenter.jpg" alt="04" width="25%" height="25%" /></div>
 
 
 
