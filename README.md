@@ -31,8 +31,8 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 
 ### 3.2 登录界面
+<div align="center"><img src="http://tang5618.com/zip/login.jpg" alt="01" width="15%" height="15%" /></div>
 
-<img src="http://tang5618.com/zip/login.jpg" alt="5" style="zoom:10%;" />
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
 
@@ -42,8 +42,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 
 ### 3.3 主页
-
-<img src="http://tang5618.com/zip/mainpage.jpg" alt="1" style="zoom: 33%;" />
+<div align="center"><img src="http://tang5618.com/zip/mainpage.jpg" alt="02" width="15%" height="15%" /></div>
 
 + 主页主要由四部分构成：
   + 顶端放置搜索栏，匹配字段对英文文章进行搜索。
@@ -57,23 +56,20 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.4 签到页
 
-<img src="http://tang5618.com/zip/signin.jpg" alt="3" style="zoom:33%;" />
-
-
+<div align="center"><img src="http://tang5618.com/zip/signin.jpg" alt="03" width="15%" height="15%" /></div>
 
 
 
 ### 3.5 个人信息页面
 
-<img src="https://tang5618.com/zip/usercenter.jpg" alt="2" style="zoom:33%;" />
 
-
+<div align="center"><img src="https://tang5618.com/zip/usercenter.jpg" alt="04" width="15%" height="15%" /></div>
 
 
 
 ### 3.6 背单词页面
 
-<img src="http://tang5618.com/zip/word_recite.png" alt="4" style="zoom:100%;" />
+<div align="center"><img src="http://tang5618.com/zip/word_recite.png" alt="05" width="15%" height="15%" /></div>
 
 + 底部按键用以选择用户记忆程度
 
@@ -87,8 +83,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.7 文章阅读页
 
-<img src="http://tang5618.com/zip/article_main.jpg" alt="7" style="zoom:45%;" />
-
+<div align="center"><img src="http://tang5618.com/zip/article_main.jpg" alt="06" width="15%" height="15%" /></div>
 
 
 + 文章底部评论、点赞、收藏、调整字体功能及动画均已实现。
