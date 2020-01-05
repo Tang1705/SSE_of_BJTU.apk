@@ -28,6 +28,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.1 引导页
 
+<div align="center"><img src="http://tang5618.com/zip/intro1.jpg" alt="11" width="25%" height="25%" />   <img src="http://tang5618.com/zip/intro2.jpg" alt="12" width="25%" height="25%" />    <img src="http://tang5618.com/zip/intro3.jpg" alt="09" width="25%" height="25%" />  </div>
 
 
 ### 3.2 登录界面
@@ -36,10 +37,12 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
 
-+ 输入密码时，如果密码输入格式不符合要求（不到5个字符），会有警告提示，并且无法点击登录按钮。
-+ 当密码符合要求时，用户点击登录按钮，所输入数据将与数据库中的数据进行匹配，如果成功匹配，则跳转至***主页***，如果无法成功匹配，则登录失败。
++ 输入密码时，如果密码输入格式不符合要求（不到5个字符），会有警告提示。
++ 当密码符合要求时，用户点击登录按钮，所输入数据将与数据库中的数据进行匹配，如果成功匹配，则跳转至***主页***，如果无法成功匹配，则登录失败,在本项目中，当需要请求网络资源时，采用模拟模态对话框的方式禁止用户在长时间加载数据时点击界面造成假死现象。
 
+如下图所示：
 
+<div align="center"><img src="http://tang5618.com/zip/e.jpg" alt="07" width="25%" height="25%" />   <img src="http://tang5618.com/zip/w1.jpg" alt="08" width="25%" height="25%" />    <img src="http://tang5618.com/zip/w2.jpg" alt="09" width="25%" height="25%" />  <img src="http://tang5618.com/zip/s.jpg" alt="10" width="25%" height="25%" /></div>
 
 ### 3.3 主页
 <div align="center"><img src="http://tang5618.com/zip/mainpage.jpg" alt="02" width="25%" height="25%" /></div>
