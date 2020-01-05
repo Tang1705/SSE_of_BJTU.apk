@@ -1,7 +1,6 @@
 package com.bjtu.wanciwang.view.main.ui.dashboard
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,17 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bjtu.wanciwang.R
 import com.bjtu.wanciwang.view.main.ui.dashboard.SignDialogFragment.OnConfirmListener
-import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.ResolutionUtil
-import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.ResolutionUtil.Companion.instance
 import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.SignAdapter
 import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.SignEntity
 import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.SignView
 import com.bjtu.wanciwang.view.main.ui.dashboard.SignViewX.SignView.OnTodayClickListener
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
-import kotlinx.android.synthetic.main.fragment_dashboard.view.tv_date
-import kotlinx.android.synthetic.main.fragment_dashboard.view.tv_score
-import kotlinx.android.synthetic.main.fragment_dashboard.view.tv_sign_data
-import kotlinx.android.synthetic.main.fragment_dashboard.view.tv_sign_state
 import java.util.*
 import kotlinx.android.synthetic.main.fragment_dashboard.view.activity_main_cv as activity_main_cv1
 

@@ -87,11 +87,11 @@ class HomeFragment : Fragment() {
         val searchMenuItem = menu.findItem(R.id.action_search)
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
-        searchView.queryHint = "Search Latest Courses..."
+        searchView.queryHint = "探索更大的世界..."
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 if (query.length <= 2) {
-                    Toast.makeText(activity, "Type more than two letters!", Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, "请输入不少于两个字符！", Toast.LENGTH_SHORT)
                         .show()
                 }
                 return false
