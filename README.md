@@ -14,6 +14,8 @@
 
 本报告展示安卓最终大项目的全部界面并介绍实现功能及部分技术细节。
 
+**项目特色 项目采用Kotlin语言及MVVM的模式进行开发**
+
 
 
 ## 二、需求实现情况一览
@@ -28,7 +30,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.1 引导页
 
-<div align="center"><img src="http://tang5618.com/zip/intro1.jpg" alt="11" width="25%" height="25%" />   <img src="http://tang5618.com/zip/intro2.jpg" alt="12" width="25%" height="25%" />    <img src="http://tang5618.com/zip/intro3.jpg" alt="09" width="25%" height="25%" />  </div>
+<div align="center"><img src="http://tang5618.com/zip/intro_1.jpg" alt="11" width="25%" height="25%" />   <img src="http://tang5618.com/zip/intro_2.jpg" alt="12" width="25%" height="25%" />    <img src="http://tang5618.com/zip/intro_3.jpg" alt="09" width="25%" height="25%" />  </div>
 
 
 ### 3.2 登录界面
@@ -42,7 +44,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 如下图所示：
 
-<div align="center"><img src="http://tang5618.com/zip/e.jpg" alt="07" width="25%" height="25%" />   <img src="http://tang5618.com/zip/w1.jpg" alt="08" width="25%" height="25%" />    <img src="http://tang5618.com/zip/w2.jpg" alt="09" width="25%" height="25%" />  <img src="http://tang5618.com/zip/s.jpg" alt="10" width="25%" height="25%" /></div>
+<div align="center"><img src="http://tang5618.com/zip/e.jpg" alt="07" width="25%" height="25%" />   <img src="http://tang5618.com/zip/w1.jpg" alt="08" width="25%" height="25%" />  <img src="http://tang5618.com/zip/s.jpg" alt="10" width="25%" height="25%" /></div>
 
 ### 3.3 主页
 <div align="center"><img src="http://tang5618.com/zip/mainpage.jpg" alt="02" width="25%" height="25%" /></div>
