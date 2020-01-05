@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#5599FF</color>
+    <color name="colorPrimaryDark">#5599FF</color>
+    <color name="colorAccent">#5599FF</color>
+
+    <color name="text_zero">#000000</color>
+    <color name="text_one">#333333</color>
+    <color name="text_two">#838383</color>
+    <color name="text_three">#fd4257</color>
+    <color name="text_four">#747474</color>
+    <color name="white">#FFFFFF</color>
+    <color name="convert_back">#ff6639</color>
+    <color name="text_five">#555555</color>
+    <color name="text_six">#b5b5b5</color>
+    <color name="line_back">#efefef</color>
+    <color name="text_seven">#cdcdcd</color>
+    <color name="text_e">#666666</color>
+    <color name="text_f">#555555</color>
+    <color name="red">#FF0000</color>
+    <color name="text_good">#999999</color>
+    <color name="text_nine">#ee3b22</color>
+    <color name="line_x">#dad8d8</color>
+    <color name="text_ten">#8b8a8a</color>
+    <color name="text_eleven">#ff3333</color>
+    <color name="text_twelve">#aeacac</color>
+    <!--测试-->
+    <color name="wheel_item_text_color_selected">#FF0288ce</color>
+    <color name="line">#edeef1</color>
+    <color name="small_text_color">#333333</color>
+    <color name="color_red">#FD2E4A</color>
+    <color name="color_green">#13D1BE</color>
+
+    <color name="submit_btn_disabled">#FFBCBCBC</color>
+    <color name="submit_btn_pressed">#166EA5</color>
+    <color name="submit_btn_normal">#FF1B89CD</color>
 </resources>

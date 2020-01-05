@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">WanCiWang</string>
+    <string name="welcome">欢迎使用万词王</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="password">请输入密码</string>
+    <string name="telephone">请输入手机号</string>
+    <string name="telephone_number">手机号码</string>
+    <string name="log_in">新用户注册</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">签到</string>
+    <string name="title_notifications">我的</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="search">Search</string>
+    <string name="memory_word">记忆单词</string>
+    <string name="cir_voice">场景配音</string>
+    <string name="good_article">精品美文</string>
+    <string name="app_mall">词王商城</string>
+    <string name="much_score_int">%1$d 分</string>
+    <string name="have_signed">已签到</string>
+    <string name="password_label">密 码</string>
 </resources>
