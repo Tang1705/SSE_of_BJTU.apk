@@ -30,6 +30,9 @@
             android:name=".view.main.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme" />
+        <activity android:name=".view.article.ReadArticleActivity" />
+        <activity android:name=".view.article.scanarticleActivity" />
+
 
         <activity android:name=".view.login.LogInActivity">
             <intent-filter>
@@ -43,8 +46,10 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent101844536" />
             </intent-filter>
         </activity>

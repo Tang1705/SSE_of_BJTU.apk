@@ -9,12 +9,14 @@ import com.bumptech.glide.Glide
 class Article(
     private var name: String,
     private var date: String,
+    private var content: String,
     private var url: String
 ) {
 
 
     fun getName(): String = name
 
+    fun getContent(): String = content
 
     fun getDate(): String = date
 

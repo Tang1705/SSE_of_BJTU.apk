@@ -14,12 +14,21 @@ import android.view.MenuInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bjtu.wanciwang.R
 import com.bjtu.wanciwang.adapter.RecycleViewAdapter
+import com.bjtu.wanciwang.common.GetByURL
 import com.bjtu.wanciwang.entity.Article
+import com.bjtu.wanciwang.view.article.scanarticleActivity
+import com.bjtu.wanciwang.view.main.MainActivity
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlinx.android.synthetic.main.fragment_notifications.view.*
+import org.json.JSONArray
+import org.json.JSONObject
 import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
     lateinit var recycleViewAdapter: RecycleViewAdapter
+    var urls: ArrayList<String> = ArrayList()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,48 +39,52 @@ class HomeFragment : Fragment() {
         root!!.recyclerView.layoutManager = LinearLayoutManager(activity)
         setHasOptionsMenu(true)
 
+        urls.add("http://tang5618.com:8080/elearn/materials/1/videoframe")
+        urls.add("http://tang5618.com/WEB/org.png")
+        urls.add("http://tang5618.com/WEB/zyd.jpg")
+        urls.add("http://tang5618.com/WEB/teck.png")
+        urls.add("http://tang5618.com/WEB/timeline.png")
+        urls.add("tang5618.com/WEB/function.png")
+
         val list: ArrayList<Article> = ArrayList()
 
         // TODO
-        list.add(
-            Article(
-                "Best Performance Solo",
-                "EASY | 2020/1/4",
-                "http://47.94.107.165:8080/elearn/materials/2/media"
-            )
-        )
+        val intent = activity!!.intent
+        val bundle = intent.extras
+        val uid: Int = bundle!!.getInt("uuid")
+        val token: String = bundle.getString("token")!!
 
-        list.add(
-            Article(
-                "Better Performance Solo",
-                "EASY | 2020/1/4",
-                "http://47.94.107.165:8080/elearn/materials/2/media"
+        val jsonObject =
+            JSONObject(
+                GetByURL.readParse(
+                    "http://122.51.247.44:8080/atc/atclist?uuid=" + uid
+                            + "&token=" + token
+                )
             )
-        )
 
-        list.add(
-            Article(
-                "Worst Performance Solo",
-                "EASY | 2020/1/4",
-                "http://47.94.107.165:8080/elearn/materials/2/media"
-            )
-        )
+        if (jsonObject.getInt("code") == 0) {
+            val jsonArray = jsonObject.getJSONArray("list")
+            var i: Int = 0
+            while (i < jsonArray.length()) {
+                val j = jsonArray.getJSONObject(i)
+                val article: Article = Article(
+                    j.getString("name"), j.getInt("time").toString(),
+                    j.getString("content"), urls[i]
+                )
+                list.add(article)
+                i += 1
+            }
 
-        list.add(
-            Article(
-                "Worst Performance Solo",
-                "EASY | 2020/1/4",
-                "http://47.94.107.165:8080/elearn/materials/2/media"
-            )
-        )
+        }
 
-        list.add(
-            Article(
-                "Worst Performance Solo",
-                "EASY | 2020/1/4",
-                "http://47.94.107.165:8080/elearn/materials/2/media"
-            )
-        )
+        root.article.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val intent = Intent(activity, scanarticleActivity::class.java)
+                startActivity(intent)
+                activity!!.overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
+            }
+
+        })
 
         recycleViewAdapter = RecycleViewAdapter(list)
         root.recyclerView.adapter = recycleViewAdapter

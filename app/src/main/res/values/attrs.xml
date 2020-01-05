@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="item_view">
+        <attr name="show_bottomline" format="boolean" />
+        <attr name="show_leftimg" format="integer" />
+        <attr name="show_text" format="string" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/articleLayout">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    </LinearLayout>
+    <com.bjtu.wanciwang.view.article.FadingScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content, blablabla..."
+                android:textSize="30dp">
+            </TextView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/test3">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/news_item_content_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:text="Follow the Wireshark Lab:
+and hand in answers for these four labs.
+
+Replace the target host from www.ust.hk to www.163.com for ICMP lab and answer questions.
+
+Submit the capture files and the answers for the Lab questions. Upload them to incoming directory. Do not compress.
+
+For each lab,  upload only two files. For the print requirement in lab Intro, merge them into one PDF file with your answers.
+
+
+Your submission on the ftp server should look like this:
+
+17770077-IP-James.pcapng
+17770077-IP-James.pdf
+
+Due: 2019-12-05 8:00AM
+
+ftp://cn:cn@172.31.34.18/incoming
+
+Hint:
+Please reboot before you start,  make your computer only work for the lab and finish each lab ASAP.
+You must capture your own trace. Trace file http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip is not allowed.
+Filter is very convenient in wireshark." />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:lineSpacingExtra="2dp"
+                ></TextView>
+        </LinearLayout>
+
+    </com.bjtu.wanciwang.view.article.FadingScrollView>
+    <LinearLayout
+        style="@android:style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/comment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            app:srcCompat="@drawable/ic_message_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/like_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            app:srcCompat="@drawable/ic_thumb_up_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            app:srcCompat="@drawable/ic_book_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/font_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            app:srcCompat="@drawable/ic_font_download_black_24dp" />
+    </LinearLayout>
+
+</RelativeLayout>

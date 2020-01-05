@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#5599FF</color>
     <color name="colorAccent">#5599FF</color>
 
+    <color name="black">#000</color>
     <color name="text_zero">#000000</color>
     <color name="text_one">#333333</color>
     <color name="text_two">#838383</color>

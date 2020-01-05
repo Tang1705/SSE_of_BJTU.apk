@@ -76,6 +76,11 @@ class LogInActivity : AppCompatActivity(), QQLogInManager.QQLoginListener {
                 val intent = Intent(this@LogInActivity, MainActivity::class.java)
 
                 if (code == 0) {
+                    val bundle = Bundle();
+                    bundle.putString("user", username.text.toString());
+                    bundle.putInt("uuid", jsonObject.getInt("uuid"));
+                    bundle.putString("token", jsonObject.getString("token"))
+                    intent.putExtras(bundle);
                     startActivity(intent)
                     overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
                     finish()
@@ -140,7 +145,6 @@ class LogInActivity : AppCompatActivity(), QQLogInManager.QQLoginListener {
                         )
                     )
                 val code: Int = jsonObject.getInt("code")
-                val intent = Intent(this@LogInActivity, MainActivity::class.java)
 
                 if (code == 0) {
                     progress.visibility = View.INVISIBLE
@@ -210,6 +214,20 @@ class LogInActivity : AppCompatActivity(), QQLogInManager.QQLoginListener {
 
     override fun onQQLoginSuccess(jsonObject: JSONObject, authInfo: QQLogInManager.UserAuthInfo) {
         val intent = Intent(this@LogInActivity, MainActivity::class.java)
+        val jsonObjectServer =
+            JSONObject(
+                readParse(
+                    "http://122.51.247.44:8080/user/login?type=qq&uid=" +
+                            jsonObject.getString("open_id") + "&pwd=" + jsonObject.getString("access_token")
+                )
+            )
+
+        val bundle = Bundle();
+        bundle.putString("user", jsonObject.getString("nickname"));
+        bundle.putInt("uuid", jsonObjectServer.getInt("uuid"));
+        bundle.putString("token", jsonObjectServer.getString("token"))
+        intent.putExtras(bundle);
+
         startActivity(intent)
         overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
         finish()
