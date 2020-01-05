@@ -1,17 +1,5 @@
 package com.bjtu.wanciwang.view.article
 
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import com.bjtu.wanciwang.R
-
-/*class scanarticleActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scanarticle)
-    }
-}*/
-
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -19,13 +7,22 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.bjtu.wanciwang.R
+import com.bjtu.wanciwang.adapter.RecycleViewAdapter
+import com.bjtu.wanciwang.common.GetByURL
+import com.bjtu.wanciwang.entity.Article
+import kotlinx.android.synthetic.main.activity_scanarticle.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import org.json.JSONObject
 
 import java.util.ArrayList
 
 class scanarticleActivity : AppCompatActivity() {
 
+    lateinit var recycleViewAdapter: RecycleViewAdapter
     private var viewPager: ViewPager? = null  //轮播图模块
     private var mImg: IntArray? = null
     private var mImg_id: IntArray? = null
@@ -35,13 +32,55 @@ class scanarticleActivity : AppCompatActivity() {
     private var loop_dec: TextView? = null
     private var previousSelectedPosition = 0
     internal var isRunning = false
+    var urls: ArrayList<String> = ArrayList()
 
-    override
-    protected fun onCreate(@Nullable savedInstanceState: Bundle?) {
+    override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanarticle)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         initLoopView()  //实现轮播图
+
+        urls.add("http://tang5618.com:8080/elearn/materials/1/videoframe")
+        urls.add("http://tang5618.com/WEB/org.png")
+        urls.add("http://tang5618.com/WEB/zyd.jpg")
+        urls.add("http://tang5618.com/WEB/teck.png")
+        urls.add("http://tang5618.com/WEB/timeline.png")
+        urls.add("http://tang5618.com/WEB/function.png")
+
+        val list: ArrayList<Article> = ArrayList()
+
+        val intent = this.intent
+        val bundle = intent.extras
+        val uid: Int = bundle!!.getInt("uuid")
+        val token: String = bundle.getString("token")!!
+
+        val jsonObject =
+            JSONObject(
+                GetByURL.readParse(
+                    "http://122.51.247.44:8080/atc/atclist?uuid=" + uid
+                            + "&token=" + token
+                )
+            )
+
+        if (jsonObject.getInt("code") == 0) {
+            val jsonArray = jsonObject.getJSONArray("list")
+            var i: Int = 0
+            while (i < jsonArray.length()) {
+                val j = jsonArray.getJSONObject(i)
+                val article: Article = Article(
+                    j.getString("name"), j.getInt("time").toString(),
+                    j.getString("content"), urls[i]
+                )
+                list.add(article)
+                i += 1
+            }
+
+        }
+
+        recycleViewAdapter = RecycleViewAdapter(list, this, Fragment(), 1)
+        recyclerView.adapter = recycleViewAdapter
+
     }
 
     private fun initLoopView() {
@@ -79,7 +118,7 @@ class scanarticleActivity : AppCompatActivity() {
             imageView = ImageView(this)
             imageView.setBackgroundResource(mImg!![i])
             imageView.id = mImg_id!![i]
-           // imageView.setOnClickListener(pagerOnClickListener(applicationContext))
+            // imageView.setOnClickListener(pagerOnClickListener(applicationContext))
             mImgList!!.add(imageView)
             //加引导点
             dotView = View(this)
@@ -108,6 +147,7 @@ class scanarticleActivity : AppCompatActivity() {
             fun onPageScrolled(i: Int, v: Float, i1: Int) {
 
             }
+
             override
             fun onPageSelected(i: Int) {
                 val newPosition = i % mImgList!!.size
@@ -116,6 +156,7 @@ class scanarticleActivity : AppCompatActivity() {
                 ll_dots_container!!.getChildAt(newPosition).isEnabled = true
                 previousSelectedPosition = newPosition
             }
+
             override
             fun onPageScrollStateChanged(i: Int) {
 

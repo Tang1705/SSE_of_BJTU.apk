@@ -25,6 +25,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.collections.ArrayList
 
+@Suppress("NAME_SHADOWING")
 class HomeFragment : Fragment() {
     lateinit var recycleViewAdapter: RecycleViewAdapter
     var urls: ArrayList<String> = ArrayList()
@@ -44,7 +45,7 @@ class HomeFragment : Fragment() {
         urls.add("http://tang5618.com/WEB/zyd.jpg")
         urls.add("http://tang5618.com/WEB/teck.png")
         urls.add("http://tang5618.com/WEB/timeline.png")
-        urls.add("tang5618.com/WEB/function.png")
+        urls.add("http://tang5618.com/WEB/function.png")
 
         val list: ArrayList<Article> = ArrayList()
 
@@ -79,14 +80,22 @@ class HomeFragment : Fragment() {
 
         root.article.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val intent = Intent(activity, scanarticleActivity::class.java)
-                startActivity(intent)
+                val hereIntent = Intent(activity, scanarticleActivity::class.java)
+                val intent = activity!!.intent
+                val bundle = intent.extras
+                val uid: Int = bundle!!.getInt("uuid")
+                val token: String = bundle.getString("token")!!
+                val hereBundle = Bundle();
+                hereBundle.putInt("uuid", uid);
+                hereBundle.putString("token", token)
+                hereIntent.putExtras(bundle);
+                startActivity(hereIntent)
                 activity!!.overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
             }
 
         })
 
-        recycleViewAdapter = RecycleViewAdapter(list)
+        recycleViewAdapter = RecycleViewAdapter(list, activity!!, this, 0)
         root.recyclerView.adapter = recycleViewAdapter
         return root
     }

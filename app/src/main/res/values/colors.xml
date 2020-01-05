@@ -35,4 +35,5 @@
     <color name="submit_btn_disabled">#FFBCBCBC</color>
     <color name="submit_btn_pressed">#166EA5</color>
     <color name="submit_btn_normal">#FF1B89CD</color>
+    <color name="color_darkGreen">#4CAF50</color>
 </resources>
