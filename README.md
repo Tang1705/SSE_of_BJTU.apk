@@ -31,7 +31,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 
 ### 3.2 登录界面
-<div align="center"><img src="http://tang5618.com/zip/login.jpg" alt="01" width="15%" height="25%" /></div>
+<div align="center"><img src="http://tang5618.com/zip/login.jpg" alt="01" width="25%" height="25%" /></div>
 
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
