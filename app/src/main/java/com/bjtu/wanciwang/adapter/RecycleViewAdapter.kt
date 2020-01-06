@@ -1,19 +1,18 @@
 package com.bjtu.wanciwang.adapter
 
-import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.bjtu.wanciwang.R
 import com.bjtu.wanciwang.databinding.ItemArticleBinding
 import com.bjtu.wanciwang.entity.Article
 import com.bjtu.wanciwang.view.article.ReadArticleActivity
-import com.bjtu.wanciwang.view.main.ui.home.HomeViewModel
 
 class RecycleViewAdapter(
     private var list: ArrayList<Article>,
-    private val activity: Activity,
+    private val activity: FragmentActivity?,
     val fragment: Fragment,
     private val type: Int
 ) :
@@ -48,12 +47,12 @@ class RecycleViewAdapter(
                 println(position)
                 intent.putExtra("articleData", list[position])
                 fragment.startActivity(intent)
-                activity.overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
+                activity!!.overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
             } else {
                 val intent = Intent(activity, ReadArticleActivity::class.java)
                 val position = it
                 intent.putExtra("articleData", list[position])
-                activity.startActivity(intent)
+                activity!!.startActivity(intent)
                 activity.overridePendingTransition(R.anim.out_alpha, R.anim.enter_alpha)
             }
         }

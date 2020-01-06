@@ -6,4 +6,40 @@
         <attr name="show_text" format="string" />
 
     </declare-styleable>
+    <declare-styleable name="MenuItemLayout">
+        <attr name="title_text" format="string" />
+        <attr name="hint_text" format="string" />
+        <attr name="icon_reference" format="reference" />
+        <attr name="icon_uri" format="string" />
+        <attr name="jump_url" format="string" />
+        <attr name="divide_line_style" format="integer" />
+    </declare-styleable>
+
+    <attr name="visible_tab_count" format="integer"/>
+    <declare-styleable name="BannerLayoutStyle">
+        <attr name="selectedIndicatorColor" format="color|reference"/>
+        <attr name="unSelectedIndicatorColor" format="color|reference"/>
+        <attr name="titleBGColor" format="color|reference"/>
+        <attr name="titleColor" format="color|reference"/>
+
+
+        <attr name="indicatorShape" format="enum">
+            <enum name="rect" value="0"/>
+            <enum name="oval" value="1"/>
+        </attr>
+
+        <attr name="selectedIndicatorHeight" format="dimension|reference"/>
+        <attr name="selectedIndicatorWidth" format="dimension|reference"/>
+        <attr name="unSelectedIndicatorHeight" format="dimension|reference"/>
+        <attr name="unSelectedIndicatorWidth" format="dimension|reference"/>
+
+        <attr name="indicatorSpace" format="dimension|reference"/>
+        <attr name="indicatorMargin" format="dimension|reference"/>
+        <attr name="autoPlayDuration" format="integer|reference"/>
+        <attr name="scrollDuration" format="integer|reference"/>
+        <attr name="isAutoPlay" format="boolean"/>
+        <attr name="defaultImage" format="integer|reference"/>
+
+    </declare-styleable>
+
 </resources>

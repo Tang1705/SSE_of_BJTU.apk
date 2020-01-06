@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="2dp"
+        tools:ignore="MissingConstraints">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/line_x"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="32dp"
+                    android:layout_height="53dp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/phonetic_symbol_textView"
+                    app:layout_constraintHorizontal_bias="0.92"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/presence_audio_online" />
+
+                <TextView
+                    android:id="@+id/phonetic_symbol_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="TextView"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ScrollView
+                android:layout_width="409dp"
+                android:layout_height="458dp"
+                android:background="@color/line_back"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_darkGreen"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/interpretation_tag_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:text="学习设置"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/interpretation_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toTopOf="@+id/interpretation_tag_textView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_darkGreen"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/example_tag_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:text="已选次数"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/example_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toTopOf="@+id/interpretation_tag_textView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_darkGreen"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/auxiliary_tag_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:text="历史进度"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/auxiliary_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toTopOf="@+id/interpretation_tag_textView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </LinearLayout>
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                    <com.bjtu.wanciwang.view.another.MenuItemLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:divide_line_style="2"
+                        app:icon_reference="@mipmap/ic_launcher"
+                        app:title_text="词书名称" />
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:paddingTop="5dp"
+            android:screenOrientation="portrait" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#00FF0000" />
+
+
+
+
+
+    </LinearLayout>
+</layout>

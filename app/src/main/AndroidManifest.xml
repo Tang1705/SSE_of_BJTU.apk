@@ -34,7 +34,9 @@
         <activity android:name=".view.article.scanarticleActivity" />
 
 
-        <activity android:name=".view.login.LogInActivity">
+        <activity android:name=".view.login.LogInActivity" />
+        <activity android:name=".view.slide.SlideActivity" />
+        <activity android:name=".view.logo.LogoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

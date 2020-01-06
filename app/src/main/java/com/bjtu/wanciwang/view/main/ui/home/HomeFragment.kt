@@ -17,11 +17,7 @@ import com.bjtu.wanciwang.adapter.RecycleViewAdapter
 import com.bjtu.wanciwang.common.GetByURL
 import com.bjtu.wanciwang.entity.Article
 import com.bjtu.wanciwang.view.article.scanarticleActivity
-import com.bjtu.wanciwang.view.main.MainActivity
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import kotlinx.android.synthetic.main.fragment_notifications.view.*
-import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.collections.ArrayList
 
