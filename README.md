@@ -30,7 +30,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.1 引导页
 
-<div align="center"><img src="http://tang5618.com/zip/intro_1.jpg" alt="11" width="25%" height="25%" />   <img src="http://tang5618.com/zip/intro_2.jpg" alt="12" width="25%" height="25%" />    <img src="http://tang5618.com/zip/intro_3.jpg" alt="09" width="25%" height="25%" />  </div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/i1adjfar6f75duveyzaceztv/uoko_guide_background_1.jpg" alt="11" width="25%" height="25%" />   <img src="http://static.zybuluo.com/TangWill/1000405oowog8zg84lp8vhtz/uoko_guide_background_2.jpg" alt="12" width="25%" height="25%" />    <img src="http://static.zybuluo.com/TangWill/l3iwqc6b4qb16lmi079qirm1/uoko_guide_background_3.jpg" alt="09" width="25%" height="25%" />  </div>
 
 
 ### 3.2 登录界面
