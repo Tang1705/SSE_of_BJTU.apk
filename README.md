@@ -34,7 +34,7 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 
 ### 3.2 登录界面
-<div align="center"><img src="http://tang5618.com/zip/login.jpg" alt="01" width="25%" height="25%" /></div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/119sezonqj00oz8grx4fhie6/Screenshot_20200105-212344.jpg" alt="01" width="25%" height="25%" /></div>
 
 
 + 我们的登录界面实现了第三方登录，图中展示了微信、QQ、微博的登录选择，但实际上我们只实现了QQ第三方登录的功能。
@@ -44,10 +44,10 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 如下图所示：
 
-<div align="center"><img src="http://tang5618.com/zip/e.jpg" alt="07" width="25%" height="25%" />   <img src="http://tang5618.com/zip/w1.jpg" alt="08" width="25%" height="25%" />  <img src="http://tang5618.com/zip/s.jpg" alt="10" width="25%" height="25%" /></div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/9m7nxhj5fwr1y11xjq2n4r24/Screenshot_20200106-010743.jpg" alt="07" width="25%" height="25%" />   <img src="http://static.zybuluo.com/TangWill/d40omh25von8oe1de3wgj6wj/Screenshot_20200106-010721.jpg" alt="08" width="25%" height="25%" />  <img src="http://static.zybuluo.com/TangWill/4haweqqj85vrrewiedotx4y8/Screenshot_20200106-010732.jpg" alt="10" width="25%" height="25%" /></div>
 
 ### 3.3 主页
-<div align="center"><img src="http://tang5618.com/zip/mainpage.jpg" alt="02" width="25%" height="25%" /></div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/rerhbumlz4a0t6jwaaaik33v/Screenshot_20200105-212510.jpg" alt="02" width="25%" height="25%" /></div>
 
 + 主页主要由四部分构成：
   + 顶端放置搜索栏，匹配字段对英文文章进行搜索。
@@ -61,14 +61,14 @@ PS: 该部分以功能设计介绍为主，部分任务需求的实现说明请�
 
 ### 3.4 签到页
 
-<div align="center"><img src="http://tang5618.com/zip/signin.jpg" alt="03" width="25%" height="25%" /></div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/zitvk4pnbafsbo9xdj97j93h/Screenshot_20200105-170052.jpg" alt="03" width="25%" height="25%" /></div>
 
 
 
 ### 3.5 个人信息页面
 
 
-<div align="center"><img src="http://tang5618.com/zip/usercenter.jpg" alt="04" width="25%" height="25%" /></div>
+<div align="center"><img src="http://static.zybuluo.com/TangWill/th4bniqii8ystg6ruf5ua22p/Screenshot_20200105-212520.jpg" alt="04" width="25%" height="25%" /></div>
 
 
 
